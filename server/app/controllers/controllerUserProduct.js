@@ -24,6 +24,7 @@ const getUserProducts = async(req, res, next) => {
         { model: User },
       ],
       order: [['createdAt', "DESC"]],
+      where: {UserId}
     });
     res.status(200).json(userProducts);
   } catch (err) {
